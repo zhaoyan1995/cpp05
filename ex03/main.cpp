@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 19:24:09 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/02 17:42:05 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:54:40 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,6 @@ void	test_04(void)
 
 int	main(void)
 {
-	std::srand(std::time(0));
 	test_01();
 	test_02();
 	test_03();
