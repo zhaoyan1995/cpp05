@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yanzhao <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 18:21:36 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 20:53:09 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:34:05 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,26 @@
 
 Intern::Intern(void)
 {
-	std::cout << "Intern default constructeur called." << std::endl;
+	//std::cout << "Intern default constructeur called." << std::endl;
 }
 
 Intern &Intern::operator=(const Intern &src)
 {
 	if (this == &src)
 	return (*this);
-	std::cout << "Intern assignment has been called." << std::endl;
+	//std::cout << "Intern assignment has been called." << std::endl;
 	return (*this);
 }
 
 Intern::Intern(const Intern &src)
 {
 	(void)src;
-	std::cout << "Intern copy assignment has been called." << std::endl;
+	//std::cout << "Intern copy assignment has been called." << std::endl;
 }
 
 Intern::~Intern(void)
 {
-    std::cout << "Intern " << "has been destroyed." << std::endl;
+    //std::cout << "Intern " << "has been destroyed." << std::endl;
 }
 
 AForm	*Intern::makeForm(std::string formName, std::string target)

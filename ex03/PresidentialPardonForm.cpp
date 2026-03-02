@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 22:29:38 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 17:25:58 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:31:19 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,6 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 
 void	PresidentialPardonForm::execute(Bureaucrat const &executor)const
 {
-	if (this->_is_signed == false)
-		throw (NotSignedException());
-	if (this->_gradeToExecute < executor.getGrade())
-		throw (NotExecutedException());
-	std::cout << this->_target << CYAN <<  " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
+	checkExecuteRequirement(executor);
+	std::cout << CYAN << this->_target <<  " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 19:24:09 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 20:54:02 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:42:05 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ void	test_02(void)
 		{
 			Bureaucrat	Anne("Anne", 45);
 			Anne.signForm(*form);
+			Anne.executeForm(*form);
+			Anne.executeForm(*form);
+			Anne.executeForm(*form);
+			Anne.executeForm(*form);
+			Anne.executeForm(*form);
 			Anne.executeForm(*form);
 		}
 		catch (std::exception &e)

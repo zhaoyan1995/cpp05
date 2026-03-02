@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 22:29:38 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 17:27:43 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:09:40 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor)const
 	std::string	filename;
 	std::ofstream	ofs;
 
-	if (this->_is_signed == false)
-		throw (NotSignedException());
-	if (this->_gradeToExecute < executor.getGrade())
-		throw (NotExecutedException());
+	checkExecuteRequirement(executor);
+
 	filename = this->_target + "_shrubbery";
 	ofs.open(filename.c_str());
 	if (!ofs.is_open())

@@ -6,10 +6,10 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 19:24:09 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 20:30:57 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 16:07:34 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-	
+
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <exception>
@@ -86,7 +86,7 @@ void	test_04(void)
 
 void	test_05(void)
 {
-	std::cout << "Test 5: call the copy constructeur" << std::endl;
+	std::cout << "Test 5: call the copy constructor" << std::endl;
 	{
 		try
 		{
@@ -105,7 +105,7 @@ void	test_05(void)
 
 void	test_06(void)
 {
-	std::cout << "Test 6: call the copy constructeur" << std::endl;
+	std::cout << "Test 6: call the copy constructor" << std::endl;
 	{
 		try
 		{
@@ -114,6 +114,7 @@ void	test_06(void)
 			Bureaucrat assign("assign", 47);
 			std::cout << assign;
 			assign = original;
+			std::cout << assign;
 		}
 		catch (std::exception &e)
 		{

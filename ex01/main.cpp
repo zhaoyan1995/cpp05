@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 19:24:09 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 20:36:45 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 16:48:50 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void	test_01(void)
 			Bureaucrat bob("bob", 121);
 			Form form("bob_form", 120, 100);
 			std::cout << bob;
-			std::cout << "\n" << form;
+			std::cout << form;
 
 			bob.signForm(form);
-			std::cout << "\n" << form;
+			std::cout << "\nAfter signForm function:\n" << form;
 		}
 		catch (std::exception &e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << RED << e.what() << RESET << std::endl;
 		}
 	}
 	std::cout << "======Test 1======\n" << std::endl;
@@ -53,7 +53,7 @@ void	test_02(void)
 		}
 		catch (std::exception &e)
 		{
-			std::cout << e.what() << std::endl; 
+			std::cerr << RED << e.what() << RESET << std::endl;
 		}
 	}
 	std::cout << "======Test 2======\n" << std::endl;
@@ -74,15 +74,12 @@ void	test_03(void)
 			std::cout << "\n" << form;
 
 			Form copyForm(form);
+			std::cout << "\ncopyForm: \n" << copyForm;
 			alice.signForm(copyForm);
-			std::cout << "\n" << copyForm;
-
-			alice.signForm(copyForm);
-			std::cout << "\n" << copyForm;
 		}
 		catch (std::exception &e)
 		{
-			std::cout << e.what() << std::endl; 
+			std::cerr << RED << e.what() << RESET << std::endl; 
 		}
 	}
 	std::cout << "======Test 3======\n" << std::endl;
@@ -104,15 +101,12 @@ void	test_04(void)
 
 			Form assignForm;
 			assignForm = form;
-			original.signForm(assignForm);
 			std::cout << "\n" << assignForm;
-
 			original.signForm(assignForm);
-			std::cout << "\n" << assignForm;
 		}
 		catch (std::exception &e)
 		{
-			std::cout << e.what() << std::endl; 
+			std::cerr << RED << e.what() << RESET << std::endl; 
 		}
 	}
 	std::cout << "======Test 4======\n" << std::endl;
@@ -129,7 +123,7 @@ void	test_05(void)
 		}
 		catch (std::exception &e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << RED << e.what() << RESET << std::endl;
 		}
 
 		try
@@ -139,7 +133,7 @@ void	test_05(void)
 		}
 		catch (std::exception &e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << RED << e.what() << RESET << std::endl;
 		}
 
 	}

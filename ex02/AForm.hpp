@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yanzhao <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 17:27:38 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 17:25:06 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:10:07 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ class AForm
 		bool	get_isSigned(void)const;
 		int	get_gradeToSign(void)const;
 		int	get_gradeToExecute(void)const;
+		void	checkExecuteRequirement(Bureaucrat const &executor)const;
 
 	class	GradeTooHighException: public std::exception
 	{
@@ -72,7 +73,7 @@ class AForm
 			virtual const char *what()const throw();
 	};
 
-	protected:
+	private:
 		const std::string _name;
 		bool	_is_signed;
 		const int	_gradeToSign;

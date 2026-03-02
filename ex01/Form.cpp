@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yanzhao <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 18:00:55 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 20:37:53 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 16:30:01 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ _is_signed(false),
 _gradeToSign(150),
 _gradeToExecute(150)
 {
-	std::cout << "Form default constructeur has been called." << std::endl;
+	//std::cout << "Form default constructeur has been called." << std::endl;
 }
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute):
@@ -44,7 +44,7 @@ _gradeToExecute(gradeToExecute)
 	{
 		throw (GradeTooLowException());
 	}
-	std::cout << "A Form named " << this->_name << " has been called." << std::endl;
+	//std::cout << "A Form named " << this->_name << " has been called." << std::endl;
 }
 
 Form::Form(const Form &src):
@@ -69,7 +69,7 @@ _gradeToExecute(src._gradeToExecute)
 	{
 		throw (GradeTooLowException());
 	}
-	std::cout << "Form copy constructor has been called." << std::endl;
+	//std::cout << "Form copy constructor has been called." << std::endl;
 }
 
 Form &Form::operator=(const Form &src)
@@ -77,13 +77,13 @@ Form &Form::operator=(const Form &src)
 	if (this == &src)
 		return (*this);
 	this->_is_signed = src._is_signed;
-	std::cout << "Form assignment has been called."	 << std::endl;
+	//std::cout << "Form assignment has been called."	 << std::endl;
 	return (*this);
 }
 
 Form::~Form(void)
 {
-	std::cout << "A Form named " << this->_name << " has been destroyed." << std::endl;
+	//std::cout << "A Form named " << this->_name << " has been destroyed." << std::endl;
 }
 
 void	Form::beSigned(Bureaucrat &person)
@@ -93,10 +93,10 @@ void	Form::beSigned(Bureaucrat &person)
 	if (this->_is_signed == false)
 	{
 		this->_is_signed = true;
-		std::cout << "this form is signed by " << person.getName() << "." << std::endl;
+		std::cout << GREEN << "this form is signed by " << person.getName() << "." << RESET << std::endl;
 	}
 	else
-		std::cout << "this form has already been signed." << std::endl;
+		std::cout << RED << "this form has already been signed." << RESET << std::endl;
 }
 
 std::string Form::getName(void)const

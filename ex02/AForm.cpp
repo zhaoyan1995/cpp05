@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yanzhao <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 18:00:55 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 20:45:09 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:27:55 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ _is_signed(false),
 _gradeToSign(150),
 _gradeToExecute(150)
 {
-	std::cout << "AForm default constructeur has been called." << std::endl;
+	//std::cout << "AForm default constructeur has been called." << std::endl;
 }
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute):
@@ -44,7 +44,7 @@ _gradeToExecute(gradeToExecute)
 	{
 		throw (GradeTooLowException());
 	}
-	std::cout << "An AForm named " << this->_name << " has been called." << std::endl;
+	//std::cout << "An AForm named " << this->_name << " has been called." << std::endl;
 }
 
 AForm::AForm(const AForm &src):
@@ -69,7 +69,7 @@ _gradeToExecute(src._gradeToExecute)
 	{
 		throw (GradeTooLowException());
 	}
-	std::cout << "AForm copy constructor has been called." << std::endl;
+	//std::cout << "AForm copy constructor has been called." << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &src)
@@ -77,13 +77,13 @@ AForm &AForm::operator=(const AForm &src)
 	if (this == &src)
 		return (*this);
 	this->_is_signed = src._is_signed;
-	std::cout << "AForm assignment has been called."	 << std::endl;
+	//std::cout << "AForm assignment has been called."	 << std::endl;
 	return (*this);
 }
 
 AForm::~AForm(void)
 {
-	std::cout << "An AForm named " << this->_name << " has been destroyed." << std::endl;
+	//std::cout << "An AForm named " << this->_name << " has been destroyed." << std::endl;
 }
 
 void	AForm::beSigned(Bureaucrat &person)
@@ -93,10 +93,10 @@ void	AForm::beSigned(Bureaucrat &person)
 	if (this->_is_signed == false)
 	{
 		this->_is_signed = true;
-		std::cout << "this aform is signed by " << person.getName() << "." << std::endl;
+		std::cerr << GREEN << this->getName() << " is signed by " << person.getName() << "." << RESET << std::endl;
 	}
 	else
-		std::cout << "this aform has already been signed." << std::endl;
+		std::cerr << ORANGE << this->getName() << " has already been signed." << RESET << std::endl;
 }
 
 std::string AForm::getName(void)const
@@ -117,6 +117,14 @@ int	AForm::get_gradeToSign(void)const
 int	AForm::get_gradeToExecute(void)const
 {
 	return (this->_gradeToExecute);
+}
+
+void	AForm::checkExecuteRequirement(Bureaucrat const &executor)const
+{
+	if (this->get_isSigned() == false)
+		throw (NotSignedException());
+	if (this->get_gradeToExecute() > executor.getGrade())
+		throw (NotExecutedException());
 }
 
 const char *AForm::GradeTooLowException::what()const throw()

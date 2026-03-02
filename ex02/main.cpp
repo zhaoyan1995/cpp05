@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 19:24:09 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/01 17:34:33 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:21:35 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void	test_02(void)
 			tom.signForm(*robotomyForm);
 			std::cout << "\n" << *robotomyForm;
 
+			tom.executeForm(*robotomyForm);
+			tom.executeForm(*robotomyForm);
+			tom.executeForm(*robotomyForm);
+			tom.executeForm(*robotomyForm);
+			tom.executeForm(*robotomyForm);
 			tom.executeForm(*robotomyForm);
 
 			if (robotomyForm)
