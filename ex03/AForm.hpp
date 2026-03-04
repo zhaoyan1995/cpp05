@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 17:27:38 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/02 17:10:07 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/03 18:10:51 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ class AForm
 
 		void	beSigned(Bureaucrat &person);
 		virtual void	execute(Bureaucrat const &executor)const = 0;
-		void	executeForm(AForm const &form)const;
 		std::string getName(void)const;
 		bool	get_isSigned(void)const;
 		int	get_gradeToSign(void)const;

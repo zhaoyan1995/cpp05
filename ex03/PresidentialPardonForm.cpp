@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 22:29:38 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/02 17:31:19 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/03 17:25:34 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Bureaucrat.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(void):
-AForm("default name", 145, 137),
+AForm("default name", 25, 5),
 _target("PresidentialPardonForm")
 {
 

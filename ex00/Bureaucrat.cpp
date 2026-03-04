@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 15:20:05 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/02 16:01:09 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/03 17:57:07 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade):_name(name),_grade(grade)
         throw GradeTooLowException();
     if (grade < 1)
         throw GradeTooHighException();
-    this->_grade = grade;
     //std::cout << this->_name << " has been created with grade " << this->_grade << "."<< std::endl;
 }
 
@@ -39,11 +38,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src):_name(src._name),_grade(src._grade)
 {
-    if (src._grade > 150)
-        throw GradeTooLowException();
-    if (src._grade < 1)
-        throw GradeTooHighException();
-    //std::cout << "Bureaucrat copy assignment has been called." << std::endl;
+   //std::cout << "Bureaucrat copy assignment has been called." << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(void)
@@ -87,6 +82,6 @@ const   char *Bureaucrat::GradeTooLowException::what()const throw()
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &src)
 {
-    os << src.getName() << ", " << "bureaucrat grade " << src.getGrade() << std::endl;
+    os << src.getName() << ", " << "bureaucrat grade " << src.getGrade() << "." << std::endl;
     return (os);
 }

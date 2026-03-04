@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 18:00:55 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/02 16:30:01 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/03 17:09:34 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,6 @@ _is_signed(src._is_signed),
 _gradeToSign(src._gradeToSign),
 _gradeToExecute(src._gradeToExecute)
 {
-	if (src._gradeToSign < 1)
-	{
-		throw (GradeTooHighException());
-	}
-	if (src._gradeToSign > 150)
-	{
-		throw (GradeTooLowException());
-	}
-	if (src._gradeToExecute < 1)
-	{
-		throw (GradeTooHighException());
-	}
-	if (src._gradeToExecute > 150)
-	{
-		throw (GradeTooLowException());
-	}
 	//std::cout << "Form copy constructor has been called." << std::endl;
 }
 
@@ -91,10 +75,7 @@ void	Form::beSigned(Bureaucrat &person)
 	if (person.getGrade() > this->get_gradeToSign())
 		throw (GradeTooLowException());
 	if (this->_is_signed == false)
-	{
 		this->_is_signed = true;
-		std::cout << GREEN << "this form is signed by " << person.getName() << "." << RESET << std::endl;
-	}
 	else
 		std::cout << RED << "this form has already been signed." << RESET << std::endl;
 }

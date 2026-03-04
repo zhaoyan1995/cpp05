@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 15:15:15 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/02/27 12:23:26 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/03 17:01:22 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 #include <string>
 #include <exception>
+#include <iostream>
 
 class	Form;
 

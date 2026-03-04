@@ -6,7 +6,7 @@
 /*   By: yanzhao <yanzhao@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 22:29:38 by yanzhao           #+#    #+#             */
-/*   Updated: 2026/03/02 17:53:32 by yanzhao          ###   ########.fr       */
+/*   Updated: 2026/03/02 17:48:56 by yanzhao          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor)const
 {
 	checkExecuteRequirement(executor);
 
-	static bool	flag = false;
+	static	bool flag = false;
 
 	if (!flag)
 	{
 		std::srand(std::time(0));
 		flag = true;
-	}
+	}	
 	std::cout << "* Zzzzz zzzz  DRILLING NOISES... *" << std::endl;
 	if (std::rand() % 2)
 	{
